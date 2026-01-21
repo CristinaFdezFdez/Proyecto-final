@@ -1,0 +1,702 @@
+[{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa677"
+  },
+  "nombre": "Madrid",
+  "pais": "España",
+  "descripcion": "Destino destacado en España.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763118508/madrid_iwz3d5.jpg",
+  "moneda": "Euro",
+  "idioma": "Español"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa678"
+  },
+  "nombre": "Ciudad de México",
+  "pais": "México",
+  "descripcion": "Destino destacado en México.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763118501/ciudad_de_mexico_tx6sqc.jpg",
+  "moneda": "Peso Mexicano",
+  "idioma": "Español"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa679"
+  },
+  "nombre": "Tokio",
+  "pais": "Japón",
+  "descripcion": "Destino destacado en Japón.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763119759/tokio_d6kogc.jpg",
+  "moneda": "Yen",
+  "idioma": "Japonés"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa67a"
+  },
+  "nombre": "París",
+  "pais": "Francia",
+  "descripcion": "Destino destacado en Francia.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763118512/Par%C3%ADs_iogqgk.jpg",
+  "moneda": "Euro",
+  "idioma": "Francés"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa67b"
+  },
+  "nombre": "Roma",
+  "pais": "Italia",
+  "descripcion": "Destino destacado en Italia.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763118513/Roma_d2ot6q.jpg",
+  "moneda": "Euro",
+  "idioma": "Italiano"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa67c"
+  },
+  "nombre": "Ottawa",
+  "pais": "Canadá",
+  "descripcion": "Destino destacado en Canadá.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763118512/Panoramic-view-oOttawa_rwywaf.jpg",
+  "moneda": "Dólar Canadiense",
+  "idioma": [
+    "Inglés",
+    "Francés"
+  ]
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa67d"
+  },
+  "nombre": "Bruselas",
+  "pais": "Bélgica",
+  "descripcion": "Destino destacado en Bélgica.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763118497/bruselas_fjmy2v.jpg",
+  "moneda": "Euro",
+  "idioma": [
+    "Francés",
+    "Neerlandés",
+    "Alemán"
+  ]
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa67e"
+  },
+  "nombre": "Berna",
+  "pais": "Suiza",
+  "descripcion": "Destino destacado en Suiza.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763118496/bern_xpb7e9.jpg",
+  "moneda": "Franco Suizo",
+  "idioma": [
+    "Alemán",
+    "Francés",
+    "Italiano",
+    "Rumano"
+  ]
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa67f"
+  },
+  "nombre": "Bogotá",
+  "pais": "Colombia",
+  "descripcion": "Destino destacado en Colombia.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763118497/Bogot%C3%A1_f4bzhq.jpg",
+  "moneda": "Peso Colombiano",
+  "idioma": "Español"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa680"
+  },
+  "nombre": "Caracas",
+  "pais": "Venezuela",
+  "descripcion": "Destino destacado en Venezuela.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763118498/caracas_o4ytyh.png",
+  "moneda": "Bolívar Soberano",
+  "idioma": "Español"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa681"
+  },
+  "nombre": "Santiago",
+  "pais": "Chile",
+  "descripcion": "Destino destacado en Chile.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763118496/Santiago_yhkttd.jpg",
+  "moneda": "Peso Chileno",
+  "idioma": "Español"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa682"
+  },
+  "nombre": "Lima",
+  "pais": "Perú",
+  "descripcion": "Destino destacado en Perú.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763118503/Limajpg_x1smmh.jpg",
+  "moneda": "Sol",
+  "idioma": "Español"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa683"
+  },
+  "nombre": "Montevideo",
+  "pais": "Uruguay",
+  "descripcion": "Destino destacado en Uruguay.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763118508/montevideo_yghiqu.jpg",
+  "moneda": "Peso Uruguayo",
+  "idioma": "Español"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa684"
+  },
+  "nombre": "Moscú",
+  "pais": "Rusia",
+  "descripcion": "Destino destacado en Rusia.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763118509/moscu_vbircj.jpg",
+  "moneda": "Rubro Ruso",
+  "idioma": "Ruso"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa685"
+  },
+  "nombre": "Astaná",
+  "pais": "Kazajistán",
+  "descripcion": "Destino destacado en Kazajistán.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763118495/astana_spg59h.jpg",
+  "moneda": "Tenge",
+  "idioma": "Kazajo"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa686"
+  },
+  "nombre": "Abuya",
+  "pais": "Nigeria",
+  "descripcion": "Destino destacado en Nigeria.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763118494/AbujaNationalMosque_yvwt6e.jpg",
+  "moneda": "Naira",
+  "idioma": "Inglés"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa687"
+  },
+  "nombre": "Nairobi",
+  "pais": "Kenia",
+  "descripcion": "Destino destacado en Kenia.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763118508/Nairobi_City_skyline_fte7cd.jpg",
+  "moneda": "Chelín Keniano",
+  "idioma": "Inglés"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa688"
+  },
+  "nombre": "Kuala Lumpur",
+  "pais": "Malasia",
+  "descripcion": "Destino destacado en Malasia.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763118503/kuala_u2np9l.jpg",
+  "moneda": "Ringgit",
+  "idioma": "Malayo"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa689"
+  },
+  "nombre": "Manila",
+  "pais": "Filipinas",
+  "descripcion": "Destino destacado en Filipinas.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763118508/manila_pmlzmr.jpg",
+  "moneda": "Peso Filipino",
+  "idioma": "Tagalo"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa68a"
+  },
+  "nombre": "Sídney",
+  "pais": "Australia",
+  "descripcion": "Destino destacado en Australia.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763118495/sidney_nf2yqj.jpg",
+  "moneda": "Dólar Australiano",
+  "idioma": "Inglés"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa68b"
+  },
+  "nombre": "Río de Janeiro",
+  "pais": "Brasil",
+  "descripcion": "Destino destacado en Brasil.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763118512/rio_yilhpy.jpg",
+  "moneda": "Real",
+  "idioma": "Portugués"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa68c"
+  },
+  "nombre": "Londres",
+  "pais": "Reino Unido",
+  "descripcion": "Destino destacado en Reino Unido.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763118503/London_ntaoxw.jpg",
+  "moneda": "Libra Esterlina",
+  "idioma": "Inglés"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa68d"
+  },
+  "nombre": "Pekín",
+  "pais": "China",
+  "descripcion": "Destino destacado en China.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763118512/pekin_ult8h2.jpg",
+  "moneda": "Yuan",
+  "idioma": "Chino Mandarín"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa68e"
+  },
+  "nombre": "Nueva Delhi",
+  "pais": "India",
+  "descripcion": "Destino destacado en India.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763118511/nueva-delhi_znmrvw.jpg",
+  "moneda": "Rupia India",
+  "idioma": [
+    "Hindi",
+    "Inglés"
+  ]
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa68f"
+  },
+  "nombre": "El Cairo",
+  "pais": "Egipto",
+  "descripcion": "Destino destacado en Egipto.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763118502/el-cairo1_finf2o.jpg",
+  "moneda": "Libra Egipcia",
+  "idioma": "Árabe"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa690"
+  },
+  "nombre": "Ciudad del Cabo",
+  "pais": "Sudáfrica",
+  "descripcion": "Destino destacado en Sudáfrica.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763121131/ciudad-cabo_ivpnd3.jpg",
+  "moneda": "Rand",
+  "idioma": [
+    "Afrikáans",
+    "Inglés",
+    "Zulú",
+    "Xhosa"
+  ]
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa691"
+  },
+  "nombre": "Buenos Aires",
+  "pais": "Argentina",
+  "descripcion": "Destino destacado en Argentina.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763118497/buenos-aires_ebeitd.jpg",
+  "moneda": "Peso Argentino",
+  "idioma": "Español"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa692"
+  },
+  "nombre": "Bangkok",
+  "pais": "Tailandia",
+  "descripcion": "Destino destacado en Tailandia.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763118496/bangkokjpg_uxx9bc.jpg",
+  "moneda": "Baht",
+  "idioma": "Tailandés"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa693"
+  },
+  "nombre": "Oslo",
+  "pais": "Noruega",
+  "descripcion": "Destino destacado en Noruega.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763118511/oslo_q6uvpu.jpg",
+  "moneda": "Corona Noruega",
+  "idioma": "Noruego"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa694"
+  },
+  "nombre": "Hanói",
+  "pais": "Vietnam",
+  "descripcion": "Destino destacado en Vietnam.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763118502/hanoi_ujzgzj.jpg",
+  "moneda": "Dong",
+  "idioma": "Vietnamita"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa695"
+  },
+  "nombre": "Katmandú",
+  "pais": "Nepal",
+  "descripcion": "Destino destacado en Nepal.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763121132/katmandu_nr20gx.jpg",
+  "moneda": "Rupia Nepalí",
+  "idioma": "Nepalí"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa696"
+  },
+  "nombre": "Colombo",
+  "pais": "Sri Lanka",
+  "descripcion": "Destino destacado en Sri Lanka.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763121131/colombojpg_uqg90c.jpg",
+  "moneda": "Rupia de Sri Lanka",
+  "idioma": "Cingalés"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa697"
+  },
+  "nombre": "Marrakech",
+  "pais": "Marruecos",
+  "descripcion": "Destino destacado en Marruecos.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763121107/marrakech_ta5trn.jpg",
+  "moneda": "Dirham Marroquí",
+  "idioma": "Árabe"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa698"
+  },
+  "nombre": "Beirut",
+  "pais": "Líbano",
+  "descripcion": "Destino destacado en Líbano.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763121127/beirut_jpg_newup7.jpg",
+  "moneda": "Libra Libanesa",
+  "idioma": "Árabe"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa699"
+  },
+  "nombre": "Gaborone",
+  "pais": "Botsuana",
+  "descripcion": "Destino destacado en Botsuana.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763121127/gaboronejpg_zoofak.jpg",
+  "moneda": "Pula Botsuano",
+  "idioma": "Inglés"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa69a"
+  },
+  "nombre": "Lilongüe",
+  "pais": "Malawi",
+  "descripcion": "Destino destacado en Malawi.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763121124/lilongue_bovvcd.jpg",
+  "moneda": "Kwacha Malawiana",
+  "idioma": "Chichewa"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa69b"
+  },
+  "nombre": "Dodoma",
+  "pais": "Tanzania",
+  "descripcion": "Destino destacado en Tanzania.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763121124/dodoma_cyhq48.jpg",
+  "moneda": "Chelín Tanzano",
+  "idioma": "Suajili"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa69c"
+  },
+  "nombre": "Lusaka",
+  "pais": "Zambia",
+  "descripcion": "Destino destacado en Zambia.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763121124/lusaka_kgvlgr.jpg",
+  "moneda": "Kwacha Zambiano",
+  "idioma": "Inglés"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa69d"
+  },
+  "nombre": "Reikiavik",
+  "pais": "Islandia",
+  "descripcion": "Destino destacado en Islandia.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763121122/reikiavik_ydhpgr.jpg",
+  "moneda": "Corona Islandesa",
+  "idioma": "Islandés"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa69e"
+  },
+  "nombre": "Helsinki",
+  "pais": "Finlandia",
+  "descripcion": "Destino destacado en Finlandia.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763121121/helsinki_anj8qe.jpg",
+  "moneda": "Euro",
+  "idioma": "Finlandés"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa69f"
+  },
+  "nombre": "Tallin",
+  "pais": "Estonia",
+  "descripcion": "Destino destacado en Estonia.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763121121/tallin_wdeg7h.jpg",
+  "moneda": "Euro",
+  "idioma": "Estonio"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa6a0"
+  },
+  "nombre": "Riga",
+  "pais": "Letonia",
+  "descripcion": "Destino destacado en Letonia.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763121120/riga_nyixor.jpg",
+  "moneda": "Euro",
+  "idioma": "Letón"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa6a1"
+  },
+  "nombre": "Vilna",
+  "pais": "Lituania",
+  "descripcion": "Destino destacado en Lituania.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763121119/Vilna_o1dgcq.jpg",
+  "moneda": "Euro",
+  "idioma": "Lituano"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa6a2"
+  },
+  "nombre": "Tiflis",
+  "pais": "Georgia",
+  "descripcion": "Destino destacado en Georgia.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763121117/tiflis_e0cppd.jpg",
+  "moneda": "Lari Georgiano",
+  "idioma": "Georgiano"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa6a3"
+  },
+  "nombre": "Ereván",
+  "pais": "Armenia",
+  "descripcion": "Destino destacado en Armenia.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763121117/Yerevan_xa83t9.jpg",
+  "moneda": "Dram Armenio",
+  "idioma": "Armenio"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa6a4"
+  },
+  "nombre": "Bakú",
+  "pais": "Azerbaiyán",
+  "descripcion": "Destino destacado en Azerbaiyán.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763121116/baku_pzyzkp.jpg",
+  "moneda": "Manat Azerí",
+  "idioma": "Azerbaiyano"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa6a5"
+  },
+  "nombre": "Kuwait",
+  "pais": "Kuwait",
+  "descripcion": "Destino destacado en Kuwait.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763121128/kuwait_w1pgbj.jpg",
+  "moneda": "Dinar Kuwaití",
+  "idioma": "Árabe"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa6a6"
+  },
+  "nombre": "Mascate",
+  "pais": "Omán",
+  "descripcion": "Destino destacado en Omán.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763121806/mascate_gokf0h.jpg",
+  "moneda": "Rial Omaní",
+  "idioma": "Árabe"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa6a7"
+  },
+  "nombre": "Taskent",
+  "pais": "Uzbekistán",
+  "descripcion": "Destino destacado en Uzbekistán.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763121114/taskent_htjylv.jpg",
+  "moneda": "Som Uzbeko",
+  "idioma": "Uzbeko"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa6a8"
+  },
+  "nombre": "Dusambé",
+  "pais": "Tayikistán",
+  "descripcion": "Destino destacado en Tayikistán.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763121113/dusambe_suanxp.jpg",
+  "moneda": "Somoni Tayiko",
+  "idioma": "Tayiko"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa6a9"
+  },
+  "nombre": "Timpu",
+  "pais": "Bután",
+  "descripcion": "Destino destacado en Bután.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763121113/himphu_uzpnjt.jpg",
+  "moneda": "Ngultrum",
+  "idioma": "Dzongkha"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa6aa"
+  },
+  "nombre": "Moroni",
+  "pais": "Comoras",
+  "descripcion": "Destino destacado en Comoras.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763121127/Moroni_kwvweb.jpg",
+  "moneda": "Franco Comorense",
+  "idioma": [
+    "Comorense",
+    "Francés",
+    "Árabe"
+  ]
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa6ab"
+  },
+  "nombre": "Victoria",
+  "pais": "Seychelles",
+  "descripcion": "Destino destacado en Seychelles.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763121112/victoria_qxzokx.jpg",
+  "moneda": "Rupia Seychelense",
+  "idioma": [
+    "Inglés",
+    "Francés",
+    "Criollo Seychelense"
+  ]
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa6ac"
+  },
+  "nombre": "Port Moresby",
+  "pais": "Papúa Nueva Guinea",
+  "descripcion": "Destino destacado en Papúa Nueva Guinea.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763121111/port-moresby_obniwt.jpg",
+  "moneda": "Kina",
+  "idioma": [
+    "Inglés",
+    "Tok Pisin",
+    "Hiri Motu"
+  ]
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa6ad"
+  },
+  "nombre": "Basseterre",
+  "pais": "San Cristóbal y Nieves",
+  "descripcion": "Destino destacado en San Cristóbal y Nieves.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763121111/Basseterre_bck9p2.jpg",
+  "moneda": "Dólar del Caribe Oriental",
+  "idioma": "Inglés"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa6ae"
+  },
+  "nombre": "Port Vila",
+  "pais": "Vanuatu",
+  "descripcion": "Destino destacado en Vanuatu.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763121110/port-vila_cv0h7z.jpg",
+  "moneda": "Vatu",
+  "idioma": [
+    "Bislama",
+    "Inglés",
+    "Francés"
+  ]
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa6af"
+  },
+  "nombre": "San Marino",
+  "pais": "San Marino",
+  "descripcion": "Destino destacado en San Marino.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763121109/san-marino_iu8ecb.jpg",
+  "moneda": "Euro",
+  "idioma": "Italiano"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa6b0"
+  },
+  "nombre": "Maseru",
+  "pais": "Lesoto",
+  "descripcion": "Destino destacado en Lesoto.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763121107/Maseru_City_CBD_qw1lks.jpg",
+  "moneda": "Loti",
+  "idioma": [
+    "Sesotho",
+    "Inglés"
+  ]
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa6b1"
+  },
+  "nombre": "Lomé",
+  "pais": "Togo",
+  "descripcion": "Destino destacado en Togo.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763121107/lom%C3%A9jpg_g9ovi1.jpg",
+  "moneda": "Franco CFA Togolés",
+  "idioma": "Francés"
+},
+{
+  "_id": {
+    "$oid": "691703a43c82573d3bbfa6b2"
+  },
+  "nombre": "Tórshavn",
+  "pais": "Islas Feroe",
+  "descripcion": "Destino destacado en Islas Feroe.",
+  "imagen": "https://res.cloudinary.com/duleqvocx/image/upload/v1763121107/torshavn_lcifgo.jpg",
+  "moneda": "Corona Feroesa",
+  "idioma": [
+    "Feroés",
+    "Danés"
+  ]
+}]

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViajaMás - Descubre tu próximo destino</title>
+    <meta name="author" content="Cristina Fernández Fernández">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script defer src="../js/destinos.js"></script>
+    <script defer src="../js/autentica.js"></script> 
+    <link rel="shortcut icon" href="../imagenes/logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="../imagenes/logo.png" alt="Logo ViajaMás">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="destinos.html">Destinos</a></li>
+                <li><a href="experiencias.html">Experiencias</a></li>
+                <li><a href="conversor.html">Conversor</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li id="inicio"><a href="iniciar-sesion.html">Iniciar Sesión</a></li>
+                <li id="salir" style="display: none;"><a href="#" id="salir">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="busqueda-flotante">
+            <h3 id="busqueda-titulo">Filtrar por:</h3>
+            <input type="text" id="busqueda-input" placeholder="Ingrese valor">
+            <button id="busqueda-boton">Buscar</button>
+        </div>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span id="close-modal" class="close">&times;</span>
+                <button id="prev-modal" class="nav-button">❮ Anterior</button>
+                <div id="modal-info">
+                    <img id="modal-img" src="" alt="Imagen del destino">
+                    <h3 id="modal-name"></h3>
+                    <p id="modal-moneda"></p>
+                    <p id="modal-idioma"></p>
+                    <p id="modal-descripcion"></p>
+                </div>
+                <button id="next-modal" class="nav-button">Siguiente ❯</button>
+            </div>
+        </div>
+        
+
+        <div class="container">
+            <section class="lista-destinos" id="destinos-container">
+                <!-- Aquí se muestran los países guardados en MongoDB -->
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+    <div class="footer-container">
+
+        <div class="footer-row">
+
+            <!-- Sobre ViajaMás -->
+            <div class="footer-col">
+                <h6>ViajaMás</h6>
+                <p class="text-justify">
+                    ViajaMás es una plataforma creada para inspirar a viajeros, descubrir destinos increíbles
+                    y conectar experiencias de todo el mundo. Explora, aprende y comparte tu aventura.
+                </p>
+            </div>
+
+            <!-- Secciones -->
+            <div class="footer-col">
+                <h6>Secciones</h6>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="destinos.html">Destinos</a></li>
+                    <li><a href="experiencias.html">Experiencias</a></li>
+                    <li><a href="conversor.html">Conversor</a></li>
+                    <li><a href="sobre-mi.html">Sobre Nosotros</a></li>
+                    <li><a href="chat.html">Chat</a></li>
+                </ul>
+            </div>
+
+            <!-- Enlaces rápidos -->
+            <div class="footer-col">
+                <h6>Enlaces útiles</h6>
+                <ul class="footer-links">
+                    <li><a href="#">Soporte</a></li>
+                    <li><a href="#">Preguntas frecuentes</a></li>
+                    <li><a href="#">Política de privacidad</a></li>
+                    <li><a href="#">Términos y condiciones</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <!-- Redes sociales -->
+        <div class="footer-bottom">
+            <p class="copyright-text">
+                &copy; 2025 ViajaMás — Todos los derechos reservados.
+            </p>
+
+            <ul class="social-icons">
+                <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+                <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a class="youtube" href="#"><i class="fa fa-youtube"></i></a></li>
+            </ul>
+        </div>
+
+    </div>
+</footer>
+</body>
+
+</html>

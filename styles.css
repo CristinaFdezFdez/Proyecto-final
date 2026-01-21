@@ -1,0 +1,971 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e8f0ff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contenedor principal */
+main {
+    flex: 1;
+    padding: 20px;
+}
+.exp{
+    flex: 1;
+    padding: 0;
+}
+/* Encabezado */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    height: 60px;
+    background-color: #0a6aa6;
+    color: white;
+}
+
+h2 {
+    color: #7D8C57;
+}
+
+/* Logo */
+.logo img {
+    width: 80px;
+    height: auto;
+}
+
+
+/* Navegación */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: none;
+    color: #FFC107;
+}
+
+.hero {
+    width: 100%;
+    height: 60vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Video de fondo */
+.hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Contenido sobre el video */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Sección de recomendaciones */
+.recomendaciones {
+    text-align: center;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.766);
+    font-size: bold;
+}
+
+/* Carrusel */
+.carousel {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.item {
+    text-align: center;
+}
+
+.item img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Sección de búsqueda */
+.busqueda {
+    text-align: center;
+    padding: 30px;
+    background-color: #e9f7f7;
+}
+
+/* Botones de filtros */
+.filtros button {
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    background-color: #FF6F61;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.filtros button:hover {
+    background-color: #7D8C57;
+}
+
+/* Lista de destinos */
+.lista-destinos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Tarjeta de cada país */
+.destino-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 240px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    height: auto;
+}
+
+/* Efecto hover en la tarjeta */
+.destino-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Imagen del destino */
+.destino-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto hover en la imagen */
+.destino-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Nombre del destino */
+.destino-card h3 {
+    font-size: 20px;
+    margin: 10px 0;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Contenedor de detalles */
+.detalles {
+    font-size: 14px;
+    margin-top: 10px;
+    padding: 10px;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-top: 1px solid #FFC107;
+}
+
+/* Título de la descripción */
+.detalles strong {
+    color: #FFC107;
+    font-weight: bold;
+}
+
+/* Espaciado entre líneas */
+.detalles p {
+    margin: 5px 0;
+    color: #333;
+    font-size: 14px;
+}
+#busqueda-flotante {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 10px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#busqueda-input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#busqueda-boton {
+    padding: 8px 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* Estilos para el modal */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    overflow: auto;
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: whitesmoke;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilo para la imagen del país */
+#modal-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+#modal-name {
+    font-size: 24px;
+    color: #FFC107;
+    font-weight: bold;
+}
+.nav-button {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#prev-modal {
+    left: 10px;
+}
+
+#next-modal {
+    right: 10px;
+}
+
+.nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Experiencias */
+/* Sección Parallax */
+.parallax {
+    position: relative;
+    height: 500px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.parallax-1 {
+    background-image: url("../imagenes/uno.jpg");
+}
+
+.parallax-2 {
+    background-image: url("../imagenes/dos.jpg");
+}
+
+.mensajeSesion {
+    background: rgba(9, 8, 8, 0.47);
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* Sección de experiencias */
+.experiencias {
+    text-align: center;
+    padding: 30px;
+    background-color: white;
+}
+
+.experiencias h2 {
+    color: #7D8C57;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.experiencias p {
+    font-size: 18px;
+    color: #333;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Formulario de comentarios */
+#comentarioForm {
+    max-width: 80%;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+#comentarioForm label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+    text-align: left;
+}
+
+#comentarioForm input,
+#comentarioForm textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+#comentarioForm textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+#comentarioForm input:focus,
+#comentarioForm textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+#comentarioForm button {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#comentarioForm button:hover {
+    background-color: #0056b3;
+}
+
+h2{
+    text-align: center;
+}
+
+#listaComentarios {
+    margin-top: 30px;
+    position: relative;
+    padding-left: 0;
+    list-style: none;
+}
+
+#listaComentarios::before {
+    content: '';
+    width: 2px;
+    height: 100%;
+    background: #c7cacb;
+    position: absolute;
+    left: 32px;
+    top: 0;
+}
+
+#listaComentarios li {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+}
+
+#listaComentarios .comentario-avatar {
+    width: 65px;
+    height: 65px;
+    border: 3px solid #FFF;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+#listaComentarios .comentario-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#listaComentarios .comentario-box {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    flex: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#listaComentarios .comentario-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+#listaComentarios .comentario-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#listaComentarios .comentario-nombre {
+    font-weight: bold;
+    color: #0a6aa6;
+    font-size: 18px;
+}
+
+#listaComentarios .comentario-fecha {
+    color: #999;
+    font-size: 14px;
+}
+
+#listaComentarios .comentario-contenido p {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+}
+
+#listaComentarios .comentario-estrellas {
+    color: #FFD700;
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-top: 8px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+/* Estilo para el select de estrellas */
+#estrellas {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #FFD700; /* Borde dorado */
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Al enfocar el select */
+#estrellas:focus {
+    border-color: #FFC107;
+    box-shadow: 0 0 5px rgba(255, 193, 7, 0.5);
+    outline: none;
+}
+.mensajeSesion {
+    background: rgba(9, 8, 8, 0.47);
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.sobre-mi {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: #247BA0;
+    color: white;
+    border-radius: 12px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Título principal */
+.sobre-mi h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #fff;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+/* Contenido de la sección "Sobre Mí" */
+.sobre-mi .info-sobre-mi {
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Resaltar el texto en negrita */
+.sobre-mi strong {
+    color: #fff;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Sombra sutil en los bordes */
+.sobre-mi::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    z-index: -1;
+}
+
+/* Efectos hover en la tarjeta */
+.sobre-mi:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+
+.sobre-mi a {
+    color: #FFC107;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.sobre-mi a:hover {
+    text-decoration: none;
+}
+
+/* Estilo general del contenedor */
+.sobre-mi .info-sobre-mi p:last-child {
+    margin-bottom: 0;
+}
+
+.sobre-mi .cita {
+    font-size: 20px;
+    font-style: italic;
+    color: #FFD700;
+    margin-top: 20px;
+}
+
+.enlace-web {
+    margin-top: 20px;
+}
+
+.enlace-web a {
+    font-size: 18px;
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.enlace-web a:hover {
+    color: #fff;
+}
+
+
+/* Estilo general para las redes sociales */
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px;
+}
+
+.social-media a {
+    font-size: 24px;
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-media a:hover {
+    transform: scale(1.2);
+    color: #FFC107;
+}
+
+
+/* Formulario de inicio de sesión y registrarse */
+
+
+.form-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.form-container h2 {
+    color: #7D8C57;
+}
+
+.form-container label {
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.form-container input {
+    width: 90%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    border: none;
+    background-color: #0a6aa6;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+    background-color: #005f6b;
+}
+
+
+h2 {
+    color: #2c3e50;
+}
+
+.highlight {
+    color: #007bff;
+}
+
+.form-info {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+/* Grupos de entrada */
+.input-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Botón de enviar */
+.btn {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Enlace a iniciar sesión */
+.login-link {
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.login-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Conversor */
+.conversor {
+    text-align: center;
+    padding: 90px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+}
+
+.conversor-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    margin: 20px auto;
+}
+
+/* Inputs y selects */
+label {
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+    color: #333;
+}
+
+input, select {
+    width: 90%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Botón */
+#convertir {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#resultado {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFC107;
+}
+
+/* ==================== FOOTER VIAJAMÁS ==================== */
+
+
+.site-footer {
+    background: rgba(10, 106, 166, 0.92); 
+    backdrop-filter: blur(6px); 
+    padding: 50px 0 25px;
+    color: #f4f4f4;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 60px;
+    box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.35);
+    border-top: 3px solid #FFC107; 
+}
+
+.site-footer h6 {
+    color: #ffffff;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.footer-container {
+    width: 90%;
+    max-width: 1300px;
+    margin: auto;
+}
+
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.footer-col {
+    width: 30%;
+    min-width: 250px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #e2e2e2;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Línea divisoria */
+.site-footer hr {
+    border: 0;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    margin: 20px 0;
+}
+
+/* Parte inferior */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.social-icons {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    background-color: rgba(255, 255, 255, 0.15);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    line-height: 40px;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background-color: white;
+    color: #0a6aa6; 
+}
+
+
+

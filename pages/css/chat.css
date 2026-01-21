@@ -1,0 +1,126 @@
+/* Reseteo para evitar conflicto con styles.css */
+body {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #e8f0ff !important;
+    display: block !important;
+    /* Evita el flex del CSS global */
+}
+
+
+.chat-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    margin-top: 80px;
+    gap: 20px;
+}
+
+/* PANEL DE USUARIOS */
+.users-panel {
+    width: 25%;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    height: 600px;
+    overflow-y: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.users-panel h3 {
+    margin-top: 0;
+    color: #0066cc;
+}
+
+#usuarios-conectados li {
+    list-style: none;
+    padding: 10px;
+    background: #f3f7ff;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    color: #333;
+}
+
+/* PANEL DEL CHAT */
+.chat-box {
+    width: 75%;
+    background: white;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat-header {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.chat-header h2 {
+    margin: 0;
+    color: #0066cc;
+}
+
+.chat-header p {
+    margin: 5px 0 0;
+    color: #777;
+}
+
+.chat-messages {
+    padding: 20px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.message {
+    padding: 12px 15px;
+    border-radius: 15px;
+    max-width: 70%;
+    margin-bottom: 15px;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.message.other {
+    background: #eef3ff;
+    border-left: 4px solid #0066cc;
+}
+
+.message.mine {
+    background: #0066cc;
+    color: white;
+    margin-left: auto;
+    border-right: 4px solid #004c99;
+}
+
+/* INPUT */
+.chat-input {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    background: #fafafa;
+}
+
+.chat-input input {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.chat-input button {
+    margin-left: 10px;
+    padding: 12px 18px;
+    border: none;
+    background: #0066cc;
+    color: white;
+    border-radius: 8px;
+    cursor: not-allowed;
+}
+
+.chat-input button:disabled,
+.chat-input input:disabled {
+    opacity: 0.6;
+}
