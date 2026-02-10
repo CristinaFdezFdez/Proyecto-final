@@ -1,0 +1,161 @@
+/* --- CONTENEDOR PRINCIPAL --- */
+.experiencias-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.titulo-seccion {
+  color: #0a6aa6; /* Azul Corporativo */
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+
+/* --- FORMULARIO --- */
+.formulario-card {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  padding: 30px;
+  border-radius: 16px;
+  margin-bottom: 50px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.formulario-card h3 {
+  margin-top: 0;
+  color: #0a6aa6;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.usuario-publicando {
+  color: #666;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+  background: #eef4f8;
+  padding: 8px 15px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.input-style, .textarea-style, .select-style {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+  margin-bottom: 15px;
+  box-sizing: border-box; /* Importante para que no se salga */
+}
+
+.input-style:focus, .textarea-style:focus, .select-style:focus {
+  border-color: #0a6aa6;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(10, 106, 166, 0.1);
+}
+
+.textarea-style {
+  min-height: 120px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.btn-publicar {
+  background-color: #0a6aa6;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-publicar:hover {
+  background-color: #085a8c;
+  transform: translateY(-2px);
+}
+
+/* --- LISTA DE TARJETAS --- */
+.grid-experiencias {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.card-experiencia {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-left: 6px solid #FFC107; /* Amarillo Corporativo */
+  transition: transform 0.2s ease;
+}
+
+.card-experiencia:hover {
+  transform: translateY(-3px);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.usuario-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  border: 2px solid #0a6aa6;
+  padding: 2px;
+}
+
+.nombre-usuario {
+  display: block;
+  color: #333;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.fecha-publicacion {
+  color: #999;
+  font-size: 0.85rem;
+}
+
+.valoracion {
+  font-size: 1.2rem;
+  color: #FFC107;
+}
+
+.card-body h4 {
+  margin: 0 0 10px 0;
+  color: #0a6aa6;
+  font-size: 1.2rem;
+}
+
+.comentario-texto {
+  color: #555;
+  font-style: italic;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 1.05rem;
+}

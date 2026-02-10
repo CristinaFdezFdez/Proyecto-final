@@ -14,10 +14,12 @@ main {
     flex: 1;
     padding: 20px;
 }
-.exp{
+
+.exp {
     flex: 1;
     padding: 0;
 }
+
 /* Encabezado */
 header {
     display: flex;
@@ -227,6 +229,7 @@ nav a:hover {
     color: #333;
     font-size: 14px;
 }
+
 #busqueda-flotante {
     position: relative;
     width: 100%;
@@ -256,16 +259,17 @@ nav a:hover {
     border-radius: 5px;
     cursor: pointer;
 }
+
 /* Estilos para el modal */
 .modal {
-    display: none; 
+    display: none;
     position: fixed;
     z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.5);
     overflow: auto;
     padding-top: 60px;
 }
@@ -312,6 +316,7 @@ nav a:hover {
     color: #FFC107;
     font-weight: bold;
 }
+
 .nav-button {
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
@@ -368,7 +373,7 @@ nav a:hover {
     border-radius: 10px;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
@@ -392,7 +397,7 @@ a{
     margin: 0 auto;
 }
 
-/* Formulario de comentarios */
+/* Formulario de comentarios ANTIGUO (Lo dejamos por seguridad) */
 #comentarioForm {
     max-width: 80%;
     margin: 20px auto;
@@ -449,7 +454,7 @@ a{
     background-color: #0056b3;
 }
 
-h2{
+h2 {
     text-align: center;
 }
 
@@ -482,7 +487,7 @@ h2{
     height: 65px;
     border: 3px solid #FFF;
     border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     margin-right: 15px;
     flex-shrink: 0;
@@ -498,14 +503,14 @@ h2{
     background: white;
     border-radius: 10px;
     padding: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     flex: 1;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #listaComentarios .comentario-box:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 #listaComentarios .comentario-head {
@@ -537,14 +542,16 @@ h2{
     font-size: 20px;
     letter-spacing: 2px;
     margin-top: 8px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
+
 /* Estilo para el select de estrellas */
 #estrellas {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 2px solid #FFD700; /* Borde dorado */
+    border: 2px solid #FFD700;
+    /* Borde dorado */
     border-radius: 5px;
     background-color: #fff;
     font-size: 18px;
@@ -558,6 +565,7 @@ h2{
     box-shadow: 0 0 5px rgba(255, 193, 7, 0.5);
     outline: none;
 }
+
 .mensajeSesion {
     background: rgba(9, 8, 8, 0.47);
     color: white;
@@ -834,7 +842,8 @@ label {
     color: #333;
 }
 
-input, select {
+input,
+select {
     width: 90%;
     padding: 8px;
     margin-top: 5px;
@@ -872,14 +881,14 @@ button:hover {
 
 
 .site-footer {
-    background: rgba(10, 106, 166, 0.92); 
-    backdrop-filter: blur(6px); 
+    background: rgba(10, 106, 166, 0.92);
+    backdrop-filter: blur(6px);
     padding: 50px 0 25px;
     color: #f4f4f4;
     font-family: 'Poppins', sans-serif;
     margin-top: 60px;
     box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.35);
-    border-top: 3px solid #FFC107; 
+    border-top: 3px solid #FFC107;
 }
 
 .site-footer h6 {
@@ -931,7 +940,7 @@ button:hover {
 /* Línea divisoria */
 .site-footer hr {
     border: 0;
-    border-top: 1px solid rgba(255,255,255,0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
     margin: 20px 0;
 }
 
@@ -964,8 +973,175 @@ button:hover {
 
 .social-icons a:hover {
     background-color: white;
-    color: #0a6aa6; 
+    color: #0a6aa6;
 }
 
+/* =========================================
+   ESTILOS DE EXPERIENCIAS (REACT) - CORREGIDOS
+   ========================================= */
 
+/* Contenedor Principal */
+.experiencias-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', sans-serif;
+}
 
+.titulo-seccion {
+    color: #0a6aa6; /* Azul ViajaMás */
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+/* --- FORMULARIO REACT --- */
+.experiencias-container .formulario-card {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    padding: 30px;
+    border-radius: 16px;
+    margin-bottom: 50px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.formulario-card h3 {
+    margin-top: 0;
+    color: #0a6aa6;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.usuario-publicando {
+    display: inline-block;
+    background: #e1f0fa;
+    color: #085a8c;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Forzamos que los inputs de React ignoren los estilos globales (ese width:90% que te daba problemas) */
+.experiencias-container .input-style, 
+.experiencias-container .textarea-style, 
+.experiencias-container .select-style {
+    padding: 14px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+    margin-bottom: 15px;
+    box-sizing: border-box; /* Vital para que no se salga del contenedor */
+}
+
+.input-style:focus, .textarea-style:focus, .select-style:focus {
+    border-color: #0a6aa6;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(10, 106, 166, 0.1);
+}
+
+.textarea-style {
+    min-height: 120px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-publicar {
+    background-color: #0a6aa6;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-publicar:hover {
+    background-color: #085a8c;
+    transform: translateY(-2px);
+}
+
+/* --- TARJETAS REACT --- */
+.grid-experiencias {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.card-experiencia {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-left: 6px solid #FFC107; /* Amarillo */
+    transition: transform 0.2s ease;
+}
+
+.card-experiencia:hover {
+    transform: translateY(-3px);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.usuario-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    border: 2px solid #0a6aa6;
+    padding: 2px;
+}
+
+.nombre-usuario {
+    display: block;
+    color: #333;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.fecha-publicacion {
+    color: #999;
+    font-size: 0.85rem;
+}
+
+.valoracion {
+    font-size: 1.2rem;
+    color: #FFC107;
+    letter-spacing: 2px;
+}
+
+.card-body h4 {
+    margin: 0 0 10px 0;
+    color: #0a6aa6;
+    font-size: 1.2rem;
+}
+
+.comentario-texto {
+    color: #555;
+    font-style: italic;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 1.05rem;
+}

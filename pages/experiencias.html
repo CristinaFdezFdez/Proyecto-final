@@ -6,13 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ViajaMás - Descubre tu próximo destino</title>
     <meta name="author" content="Cristina Fernández Fernández">
+    
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="../imagenes/logo.png" type="image/x-icon">
-    <script defer src="../js/autentica.js"></script>
-    <script defer src="../js/comentario.js"></script>
 
-
+    <link rel="stylesheet" href="http://localhost:3000/dist-react/index.css">
 </head>
 
 <body>
@@ -32,6 +31,7 @@
             </ul>
         </nav>
     </header>
+
     <main class="exp">
         <div id="mensajeNoSesion">
             <div class="parallax parallax-1">
@@ -51,94 +51,49 @@
                 </a>
             </div>
         </div>
+
         <div id="contenidoExperiencias" style="display: none;">
-            <h2>Experiencias de otros viajeros</h2>
-            <div id="listaComentarios"></div>
-
-            
-            <h2>Comparte tu experiencia</h2>
-            <form id="comentarioForm">
-                <label for="pais">País visitado:</label>
-                <input type="text" id="pais" name="pais" required>
-
-                <label for="comentario">Tu experiencia:</label>
-                <textarea id="comentario" name="comentario" required></textarea>
-
-                <label for="estrellas">Valoración (1 a 5 ⭐):</label>
-                <select id="estrellas" name="estrellas" required>
-                    <option value="1">⭐</option>
-                    <option value="2">⭐⭐</option>
-                    <option value="3">⭐⭐⭐</option>
-                    <option value="4">⭐⭐⭐⭐</option>
-                    <option value="5">⭐⭐⭐⭐⭐</option>
-                </select>
-
-                <button type="submit">Publicar</button>
-            </form>
-
+            <div id="experiencias-root"></div>
         </div>
-    </main>
-
     </main>
 
     <footer class="site-footer">
-    <div class="footer-container">
-
-        <div class="footer-row">
-
-            <!-- Sobre ViajaMás -->
-            <div class="footer-col">
-                <h6>ViajaMás</h6>
-                <p class="text-justify">
-                    ViajaMás es una plataforma creada para inspirar a viajeros, descubrir destinos increíbles
-                    y conectar experiencias de todo el mundo. Explora, aprende y comparte tu aventura.
-                </p>
+        <div class="footer-container">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <h6>ViajaMás</h6>
+                    <p class="text-justify">
+                        ViajaMás es una plataforma creada para inspirar a viajeros...
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h6>Secciones</h6>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="destinos.html">Destinos</a></li>
+                        <li><a href="experiencias.html">Experiencias</a></li>
+                        <li><a href="conversor.html">Conversor</a></li>
+                        <li><a href="chat.html">Chat</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h6>Enlaces útiles</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Soporte</a></li>
+                        <li><a href="#">Política de privacidad</a></li>
+                    </ul>
+                </div>
             </div>
-
-            <!-- Secciones -->
-            <div class="footer-col">
-                <h6>Secciones</h6>
-                <ul class="footer-links">
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="destinos.html">Destinos</a></li>
-                    <li><a href="experiencias.html">Experiencias</a></li>
-                    <li><a href="conversor.html">Conversor</a></li>
-                    <li><a href="sobre-mi.html">Sobre Nosotros</a></li>
-                    <li><a href="chat.html">Chat</a></li>
-                </ul>
+            <hr>
+            <div class="footer-bottom">
+                <p class="copyright-text">&copy; 2025 ViajaMás.</p>
             </div>
-
-            <!-- Enlaces rápidos -->
-            <div class="footer-col">
-                <h6>Enlaces útiles</h6>
-                <ul class="footer-links">
-                    <li><a href="#">Soporte</a></li>
-                    <li><a href="#">Preguntas frecuentes</a></li>
-                    <li><a href="#">Política de privacidad</a></li>
-                    <li><a href="#">Términos y condiciones</a></li>
-                </ul>
-            </div>
-
         </div>
+    </footer>
 
-        <hr>
+    <script src="../js/autentica.js"></script>
 
-        <!-- Redes sociales -->
-        <div class="footer-bottom">
-            <p class="copyright-text">
-                &copy; 2025 ViajaMás — Todos los derechos reservados.
-            </p>
+    <script src="http://localhost:3000/dist-react/index.js"></script>
 
-            <ul class="social-icons">
-                <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
-                <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a class="youtube" href="#"><i class="fa fa-youtube"></i></a></li>
-            </ul>
-        </div>
-
-    </div>
-</footer>
 </body>
-
 </html>
