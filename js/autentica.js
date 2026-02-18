@@ -3,8 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const registro = document.getElementById("registro");
     const salir = document.getElementById("salir");
     const salirLink = document.getElementById("salir");
-
-    // --- NUEVAS REFERENCIAS PARA EXPERIENCIAS ---
     const mensajeNoSesion = document.getElementById('mensajeNoSesion');
     const contenidoExperiencias = document.getElementById('contenidoExperiencias');
 

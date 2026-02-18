@@ -1,126 +1,135 @@
-/* Reseteo para evitar conflicto con styles.css */
+/* --- 1. AJUSTES DEL CUERPO Y LAYOUT --- */
 body {
-    padding: 0 !important;
     margin: 0 !important;
-    background: #e8f0ff !important;
-    display: block !important;
-    /* Evita el flex del CSS global */
+    padding: 0 !important;
+    font-family: 'Arial', sans-serif;
+    background-color: #e8f0ff !important; /* Fondo azul clarito de tu web */
+    display: block !important; /* IMPORTANTE: Para que el header no se mueva de su sitio */
 }
 
+/* --- 2. ESPACIADO PARA EL HEADER --- */
+/* Añadimos un margen arriba para que el chat no tape tu menú de navegación */
+main, .chat-container {
+    margin-top: 100px !important; 
+}
 
+/* --- 3. CONTENEDOR PRINCIPAL DEL CHAT --- */
 .chat-container {
-    width: 90%;
-    max-width: 1100px;
-    margin: auto;
-    display: flex;
-    margin-top: 80px;
-    gap: 20px;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 90% !important;
+    max-width: 800px !important;
+    height: 70vh !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    background: #ffffff !important;
+    border-radius: 15px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+    overflow: hidden !important;
+    border: 1px solid #d1d9e6 !important;
 }
 
-/* PANEL DE USUARIOS */
-.users-panel {
-    width: 25%;
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    height: 600px;
-    overflow-y: auto;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.users-panel h3 {
-    margin-top: 0;
-    color: #0066cc;
-}
-
-#usuarios-conectados li {
-    list-style: none;
-    padding: 10px;
-    background: #f3f7ff;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    color: #333;
-}
-
-/* PANEL DEL CHAT */
-.chat-box {
-    width: 75%;
-    background: white;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    height: 600px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.chat-header {
-    padding: 20px;
-    border-bottom: 1px solid #ddd;
-}
-
-.chat-header h2 {
-    margin: 0;
-    color: #0066cc;
-}
-
-.chat-header p {
-    margin: 5px 0 0;
-    color: #777;
-}
-
+/* --- 4. ÁREA DE MENSAJES --- */
 .chat-messages {
-    padding: 20px;
-    overflow-y: auto;
-    flex-grow: 1;
+    flex: 1 !important;
+    padding: 20px !important;
+    overflow-y: auto !important;
+    background-color: #f4f7f6 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
 }
 
+/* --- 5. ESTILO DE LAS BURBUJAS (Mensajes) --- */
 .message {
-    padding: 12px 15px;
-    border-radius: 15px;
-    max-width: 70%;
-    margin-bottom: 15px;
-    font-size: 15px;
-    line-height: 1.4;
+    padding: 10px 15px !important;
+    border-radius: 18px !important;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    max-width: 70% !important;
+    word-wrap: break-word !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05) !important;
 }
 
-.message.other {
-    background: #eef3ff;
-    border-left: 4px solid #0066cc;
-}
-
+/* Mensajes que envías tú (Azul ViajaMás) */
 .message.mine {
-    background: #0066cc;
-    color: white;
-    margin-left: auto;
-    border-right: 4px solid #004c99;
+    align-self: flex-end !important;
+    background: #0a6aa6 !important; /* Tu azul principal */
+    color: white !important;
+    border-bottom-right-radius: 4px !important;
 }
 
-/* INPUT */
+/* Mensajes de otros (Blanco/Gris) */
+.message.other {
+    align-self: flex-start !important;
+    background: white !important;
+    color: #333 !important;
+    border-bottom-left-radius: 4px !important;
+    border: 1px solid #eee !important;
+}
+
+/* Nombre de usuario y hora dentro del mensaje */
+.message strong {
+    display: block !important;
+    font-size: 11px !important;
+    margin-bottom: 3px !important;
+    color: inherit !important;
+}
+
+.message small {
+    display: block !important;
+    font-size: 10px !important;
+    text-align: right !important;
+    margin-top: 5px !important;
+    opacity: 0.8 !important;
+}
+
+/* --- 6. CAJA DE ENTRADA (Abajo) --- */
 .chat-input {
-    display: flex;
-    padding: 15px;
-    border-top: 1px solid #ddd;
-    background: #fafafa;
+    display: flex !important;
+    padding: 15px !important;
+    background: white !important;
+    border-top: 1px solid #eee !important;
+    gap: 10px !important;
+    align-items: center !important;
 }
 
 .chat-input input {
-    flex-grow: 1;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    flex: 1 !important;
+    padding: 12px 20px !important;
+    border: 2px solid #f0f0f0 !important;
+    border-radius: 25px !important;
+    outline: none !important;
+    font-size: 14px !important;
+    transition: 0.3s !important;
+}
+
+.chat-input input:focus {
+    border-color: #0a6aa6 !important;
 }
 
 .chat-input button {
-    margin-left: 10px;
-    padding: 12px 18px;
-    border: none;
-    background: #0066cc;
-    color: white;
-    border-radius: 8px;
-    cursor: not-allowed;
+    background: #0a6aa6 !important;
+    color: white !important;
+    border: none !important;
+    padding: 10px 20px !important;
+    border-radius: 25px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    transition: 0.2s !important;
 }
 
-.chat-input button:disabled,
-.chat-input input:disabled {
-    opacity: 0.6;
+.chat-input button:hover {
+    background: #085383 !important;
+    transform: translateY(-1px) !important;
+}
+
+/* --- 7. ARREGLO PARA EL HEADER (Prevenir que se mueva) --- */
+header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+    background: #0a6aa6 !important; /* Ajusta según tu color de header */
 }
