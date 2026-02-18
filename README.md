@@ -99,14 +99,6 @@ comentarios
 
 tours (planificada)
 
-Ejemplo de usuario
-json
-Copiar código
-{
-  "nombre": "Cristina",
-  "email": "cristina@email.com",
-  "password": "$2a$10$..."
-}
 ## 🔐 Autenticación
 Registro y login mediante JWT
 
