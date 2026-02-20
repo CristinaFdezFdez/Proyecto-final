@@ -20,45 +20,44 @@ main {
     padding: 0;
 }
 
-/* Encabezado */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    height: 60px;
+    padding: 0 20px; 
+    height: 70px; 
     background-color: #0a6aa6;
     color: white;
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box; 
 }
 
-h2 {
-    color: #7D8C57;
-}
-
-/* Logo */
 .logo img {
     width: 80px;
     height: auto;
 }
 
-
-/* Navegación */
 nav ul {
     list-style: none;
     display: flex;
-    gap: 15px;
+    gap: 20px; 
     padding: 0;
     margin: 0;
+    align-items: center;
 }
 
 nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    font-size: 14px;
+    white-space: nowrap; 
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
-    text-decoration: none;
     color: #FFC107;
 }
 
@@ -73,7 +72,6 @@ nav a:hover {
     overflow: hidden;
 }
 
-/* Video de fondo */
 .hero video {
     position: absolute;
     top: 0;
