@@ -30,8 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (response.ok) {
                 localStorage.setItem("token", data.token);
-                localStorage.setItem("usuario", JSON.stringify({ nombre: data.nombre, email: data.email })); 
-
+                localStorage.setItem("usuario", JSON.stringify({ nombre: data.usuario.nombre, email: data.usuario.email }));
                 loginMsg.innerText = "Iniciando ...";
                 loginMsg.style.color = "green";
 

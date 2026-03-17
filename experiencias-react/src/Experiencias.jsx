@@ -10,6 +10,30 @@ export default function Experiencias() {
         estrellas: 5
     });
 
+    const obtenerNombreUsuario = () => {
+        const token = localStorage.getItem("token");
+        if (token) {
+            try {
+                const payload = JSON.parse(atob(token.split('.')[1]));
+                if (payload.nombre && typeof payload.nombre === 'string') return payload.nombre;
+            } catch { 
+                // Ignoramos errores 
+            }
+        }
+
+        const usuarioLocal = localStorage.getItem("usuario");
+        if (usuarioLocal) {
+            try {
+                const obj = JSON.parse(usuarioLocal);
+                if (obj.nombre) return String(obj.nombre);
+            } catch {
+                return usuarioLocal;
+            }
+        }
+        
+        return "Desconocido";
+    };
+
     const cargarComentarios = () => {
         fetch("http://localhost:3000/comentarios")
             .then(res => res.json())
@@ -66,7 +90,8 @@ export default function Experiencias() {
                 <h3>✍️ Comparte tu aventura</h3>
                 
                 <div className="usuario-publicando">
-                    Usuario: <strong>{localStorage.getItem("usuario") || "Desconocido"}</strong>
+                    {/* AQUÍ ESTAMOS USANDO LA FUNCIÓN */}
+                    Usuario: <strong>{obtenerNombreUsuario()}</strong>
                 </div>
 
                 <form onSubmit={handleSubmit}>
