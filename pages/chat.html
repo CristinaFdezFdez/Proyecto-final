@@ -27,10 +27,15 @@
         <div id="caja-mensajes" class="chat-messages">
             </div>
 
-        <div class="chat-input">
+        <div class="chat-input-wrapper">
+        <div id="chat-bloqueado" class="chat-overlay" style="display: none;">
+            <p>🔒 <a href="iniciar-sesion.html">Inicia sesión</a> para participar en la comunidad</p>
+        </div>
+        <div class="chat-input" id="chat-controles">
             <input type="text" id="input-mensaje" placeholder="Escribe algo...">
             <button id="btn-enviar">Enviar</button>
         </div>
+    </div>
     </div>
 
     <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>

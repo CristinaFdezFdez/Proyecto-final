@@ -4,6 +4,22 @@ const cajaMensajes = document.getElementById("caja-mensajes");
 const inputMensaje = document.getElementById("input-mensaje");
 const btnEnviar = document.getElementById("btn-enviar");
 
+document.addEventListener("DOMContentLoaded", () => {
+    const contenedorPadre = document.querySelector(".chat-input-wrapper");
+    const capaBloqueo = document.getElementById("chat-bloqueado");
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+        // Si no hay sesión, aplicamos el estilo de bloqueo y mostramos el mensaje
+        if (contenedorPadre) contenedorPadre.classList.add("chat-locked");
+        if (capaBloqueo) capaBloqueo.style.display = "flex";
+    } else {
+        // Si hay sesión, nos aseguramos de que los controles estén activos
+        if (contenedorPadre) contenedorPadre.classList.remove("chat-locked");
+        if (capaBloqueo) capaBloqueo.style.display = "none";
+    }
+});
+
 function obtenerNombreUsuario() {
     // Intento sacar mi nombre desencriptando el Token JWT que guardé en el login 
     const token = localStorage.getItem("token");
@@ -30,6 +46,12 @@ function obtenerNombreUsuario() {
 function enviarMensaje() {
     const texto = inputMensaje.value.trim();
     
+    // Verificación adicional: no enviar si no hay token
+    if (!localStorage.getItem("token")) {
+        alert("Debes iniciar sesión para chatear");
+        return;
+    }
+
     if (texto !== "") {
         const datos = {
             usuario: obtenerNombreUsuario(),
@@ -45,7 +67,7 @@ function enviarMensaje() {
 
 btnEnviar.onclick = enviarMensaje;
 inputMensaje.onkeypress = (e) => { 
-    if (e.key === "Enter") enviarMensaje(); 
+    if (e.key === "Enter") enviarMensaje();
 };
 
 socket.on("mensaje_chat", (datos) => {
