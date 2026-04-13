@@ -1,11 +1,14 @@
 const express = require("express");
 const router = express.Router();
-const { obtenerComentarios, crearComentario } = require("../controllers/comentario");
 
-// Ruta para obtener todos los comentarios 
-router.get("/", obtenerComentarios);
+//Importamos tu controlador 
+const comentarioController = require("../controllers/comentario");
 
-// Ruta para publicar un nuevo comentario
-router.post("/", crearComentario);
+//Importamos el middleware para subir la foto a Cloudinary
+const upload = require("../middleware/subidaImagen"); 
+
+// 3. Definimos las rutas
+router.post("/", upload.single('imagen'), comentarioController.crearComentario);
+router.get("/", comentarioController.obtenerComentarios);
 
 module.exports = router;

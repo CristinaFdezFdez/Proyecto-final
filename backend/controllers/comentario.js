@@ -9,6 +9,7 @@ async function obtenerComentarios(req, res) {
         if (req.query.nombre) {
             filtro.nombre = { $regex: req.query.nombre, $options: "i" };
         }
+        
 
         const comentarios = await collection.find(filtro).sort({ _id: -1 }).toArray();
 
@@ -45,6 +46,8 @@ async function crearComentario(req, res) {
             return res.status(400).json({ error: "Faltan campos requeridos." });
         }
 
+        const imagenUrl = req.file ? req.file.path : null;
+
         const collection = await conectarDB("comentario");
 
         const nuevoComentario = {
@@ -52,12 +55,13 @@ async function crearComentario(req, res) {
             destino,
             comentario,
             estrellas: parseInt(estrellas),
+            imagen: imagenUrl, 
             fecha_comentario: new Date()
         };
 
         await collection.insertOne(nuevoComentario);
 
-        res.status(201).json({ mensaje: "Comentario guardado correctamente." });
+        res.status(201).json({ mensaje: "Comentario y foto guardados correctamente." });
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: "Error al guardar el comentario." });

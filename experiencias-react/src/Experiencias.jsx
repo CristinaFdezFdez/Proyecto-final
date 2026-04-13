@@ -10,6 +10,9 @@ export default function Experiencias() {
         estrellas: 5
     });
 
+    // 1. NUEVO ESTADO PARA LA IMAGEN
+    const [archivo, setArchivo] = useState(null);
+
     const obtenerNombreUsuario = () => {
         const token = localStorage.getItem("token");
         if (token) {
@@ -63,17 +66,29 @@ export default function Experiencias() {
             return;
         }
 
+        // 2. USAMOS FORMDATA EN LUGAR DE JSON PARA PODER ENVIAR ARCHIVOS
+        const formData = new FormData();
+        formData.append("destino", nuevoComentario.destino);
+        formData.append("comentario", nuevoComentario.comentario);
+        formData.append("estrellas", nuevoComentario.estrellas);
+        
+        if (archivo) {
+            formData.append("imagen", archivo);
+        }
+
         fetch("http://localhost:3000/comentarios", {
             method: "POST",
             headers: { 
-                "Content-Type": "application/json",
                 "Authorization": "Bearer " + token
             },
-            body: JSON.stringify(nuevoComentario)
+            body: formData
         })
         .then(res => {
             if (res.ok) {
+                // Limpiamos el formulario
                 setNuevoComentario({ destino: "", comentario: "", estrellas: 5 });
+                setArchivo(null);
+                document.getElementById("input-foto").value = ""; // Limpia el input visualmente
                 cargarComentarios();
             } else {
                 res.json().then(err => alert(err.error));
@@ -90,7 +105,6 @@ export default function Experiencias() {
                 <h3>✍️ Comparte tu aventura</h3>
                 
                 <div className="usuario-publicando">
-                    {/* AQUÍ ESTAMOS USANDO LA FUNCIÓN */}
                     Usuario: <strong>{obtenerNombreUsuario()}</strong>
                 </div>
 
@@ -113,6 +127,19 @@ export default function Experiencias() {
                         required 
                         className="textarea-style"
                     ></textarea>
+
+                    <div style={{ marginTop: "10px", marginBottom: "15px", textAlign: "left" }}>
+                        <label style={{ display: "block", marginBottom: "5px", fontWeight: "bold", fontSize: "0.9rem" }}>
+                            📸 Sube una foto de tu viaje:
+                        </label>
+                        <input 
+                            id="input-foto"
+                            type="file" 
+                            accept="image/*" 
+                            onChange={(e) => setArchivo(e.target.files[0])} 
+                            style={{ width: "100%", padding: "5px", border: "1px dashed #ccc", borderRadius: "5px" }}
+                        />
+                    </div>
 
                     <div className="form-footer">
                         <select 
@@ -152,9 +179,19 @@ export default function Experiencias() {
                             </div>
                             <div className="valoracion">{"⭐".repeat(c.estrellas || 5)}</div>
                         </div>
-                        <div className="card-body">
+                        <div className="card-body" style={{ textAlign: "left" }}>
                             <h4>📍 {c.destino}</h4> 
                             <p className="comentario-texto">"{c.comentario}"</p>
+                            
+                            {c.imagen && (
+                            <div style={{ marginTop: "15px", textAlign: "center", backgroundColor: "#f3f4f6", borderRadius: "8px", padding: "10px" }}>
+                                <img 
+                                    src={c.imagen} 
+                                    alt={`Viaje a ${c.destino}`} 
+                                    style={{ maxWidth: "100%", borderRadius: "4px", maxHeight: "400px", objectFit: "contain" }}
+                                />
+                            </div>
+                        )}
                         </div>
                     </div>
                 ))}
