@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 export default function Experiencias() {
     const [comentarios, setComentarios] = useState([]);
     const [cargando, setCargando] = useState(true);
+    const [enviando, setEnviando] = useState(false); // Evita doble envío al pulsar Publicar
     
     const [nuevoComentario, setNuevoComentario] = useState({
         destino: "", 
@@ -10,20 +11,22 @@ export default function Experiencias() {
         estrellas: 5
     });
 
-    // 1. NUEVO ESTADO PARA LA IMAGEN
     const [archivo, setArchivo] = useState(null);
 
+    // Extrae el nombre del usuario del token JWT sin llamar al servidor
     const obtenerNombreUsuario = () => {
         const token = localStorage.getItem("token");
         if (token) {
             try {
+                // El JWT tiene 3 partes separadas por '.', el payload es la segunda en base64
                 const payload = JSON.parse(atob(token.split('.')[1]));
                 if (payload.nombre && typeof payload.nombre === 'string') return payload.nombre;
-            } catch { 
-                // Ignoramos errores 
+            } catch {
+                // Token malformado, intentamos el fallback
             }
         }
 
+        // Fallback: objeto usuario guardado en localStorage al hacer login
         const usuarioLocal = localStorage.getItem("usuario");
         if (usuarioLocal) {
             try {
@@ -47,8 +50,10 @@ export default function Experiencias() {
             .catch(err => { console.error(err); setCargando(false); });
     };
 
+    // [] como dependencia = solo se ejecuta al montar el componente, no en cada render
     useEffect(() => { cargarComentarios(); }, []);
 
+    // Actualiza solo el campo que cambia, manteniendo el resto del estado intacto
     const handleChange = (e) => {
         setNuevoComentario({
             ...nuevoComentario,
@@ -58,43 +63,41 @@ export default function Experiencias() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (enviando) return; // Bloquea si ya hay un envío en curso
+        setEnviando(true);
         
         const token = localStorage.getItem("token");
-
         if (!token) {
             alert("Debes iniciar sesión para publicar.");
+            setEnviando(false);
             return;
         }
 
-        // 2. USAMOS FORMDATA EN LUGAR DE JSON PARA PODER ENVIAR ARCHIVOS
+        // FormData en lugar de JSON para poder adjuntar archivos binarios (imagen)
         const formData = new FormData();
         formData.append("destino", nuevoComentario.destino);
         formData.append("comentario", nuevoComentario.comentario);
         formData.append("estrellas", nuevoComentario.estrellas);
-        
-        if (archivo) {
-            formData.append("imagen", archivo);
-        }
+        if (archivo) formData.append("imagen", archivo);
 
+        // El token va en la cabecera Authorization — el servidor lo verifica y extrae el nombre
         fetch("http://localhost:3000/comentarios", {
             method: "POST",
-            headers: { 
-                "Authorization": "Bearer " + token
-            },
+            headers: { "Authorization": "Bearer " + token },
             body: formData
         })
         .then(res => {
             if (res.ok) {
-                // Limpiamos el formulario
                 setNuevoComentario({ destino: "", comentario: "", estrellas: 5 });
                 setArchivo(null);
-                document.getElementById("input-foto").value = ""; // Limpia el input visualmente
-                cargarComentarios();
+                document.getElementById("input-foto").value = "";
+                cargarComentarios(); // Recarga el muro para mostrar el nuevo comentario
             } else {
                 res.json().then(err => alert(err.error));
             }
         })
-        .catch(err => console.error(err));
+        .catch(err => console.error(err))
+        .finally(() => setEnviando(false)); // Siempre desbloquea, haya error o no
     };
 
     return (
@@ -155,7 +158,13 @@ export default function Experiencias() {
                             <option value="2">⭐⭐ Regular</option>
                             <option value="1">⭐ Malo</option>
                         </select>
-                        <button type="submit" className="btn-publicar">Publicar</button>
+                        <button 
+                            type="submit" 
+                            className="btn-publicar"
+                            disabled={enviando}
+                        >
+                            {enviando ? "Publicando..." : "Publicar"}
+                        </button>
                     </div>
                 </form>
             </div>
@@ -163,6 +172,7 @@ export default function Experiencias() {
             {cargando && <p className="text-center">Cargando experiencias...</p>}
             
             <div className="grid-experiencias">
+                {/* key con índice es aceptable aquí porque los comentarios no se reordenan */}
                 {comentarios.map((c, i) => (
                     <div key={i} className="card-experiencia">
                         <div className="card-header">
@@ -183,15 +193,16 @@ export default function Experiencias() {
                             <h4>📍 {c.destino}</h4> 
                             <p className="comentario-texto">"{c.comentario}"</p>
                             
+                            {/* La imagen es opcional — solo se renderiza si existe la URL de Cloudinary */}
                             {c.imagen && (
-                            <div style={{ marginTop: "15px", textAlign: "center", backgroundColor: "#f3f4f6", borderRadius: "8px", padding: "10px" }}>
-                                <img 
-                                    src={c.imagen} 
-                                    alt={`Viaje a ${c.destino}`} 
-                                    style={{ maxWidth: "100%", borderRadius: "4px", maxHeight: "400px", objectFit: "contain" }}
-                                />
-                            </div>
-                        )}
+                                <div style={{ marginTop: "15px", textAlign: "center", backgroundColor: "#f3f4f6", borderRadius: "8px", padding: "10px" }}>
+                                    <img 
+                                        src={c.imagen} 
+                                        alt={`Viaje a ${c.destino}`} 
+                                        style={{ maxWidth: "100%", borderRadius: "4px", maxHeight: "400px", objectFit: "contain" }}
+                                    />
+                                </div>
+                            )}
                         </div>
                     </div>
                 ))}

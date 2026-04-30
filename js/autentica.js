@@ -38,4 +38,8 @@ document.addEventListener("DOMContentLoaded", () => {
             window.location.href = "../pages/iniciar-sesion.html"; 
         });
     }
+    // Manejo de rutas no encontradas (404)
+    if (document.title === "" || document.querySelector('body').innerHTML.includes("Cannot GET")) {
+    window.location.href = '../404.html';
+}
 });

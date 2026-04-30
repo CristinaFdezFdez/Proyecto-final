@@ -12,6 +12,7 @@ const chatLogic = require("./chatLogic");
 const PORT = 3000;
 const app = express();
 const httpServer = createServer(app);
+
 //CORS: Permitimos el puerto 5500 (Live Server) y 5173 (Vite) ---
 app.use(cors({
     origin: ["http://127.0.0.1:5500", "http://localhost:5500", "http://localhost:5173"],
@@ -19,7 +20,7 @@ app.use(cors({
 }));
 const io = new Server(httpServer, {
     cors: {
-        origin: "*", // Deja entrar a cualquiera (para desarrollo)
+        origin: "*", // Deja entrar a cualquiera
         methods: ["GET", "POST"]
     }
 });
@@ -34,6 +35,18 @@ app.use("/destinos", destinosRoutes);
 app.use("/usuarios", usuarioRoutes);
 app.use("/comentarios", comentarioRoutes); 
 
+// ARCHIVOS ESTÁTICOS 
+app.use(express.static(path.join(__dirname, '..')));
+
+// MIDDLEWARE 404 
+app.use((req, res) => {
+    if (req.originalUrl.startsWith('/usuarios') || 
+        req.originalUrl.startsWith('/destinos') || 
+        req.originalUrl.startsWith('/comentarios')) {
+        return res.status(404).json({ error: "Ruta de API no encontrada." });
+    }
+    res.status(404).sendFile(path.join(__dirname, '../404.html'));
+});
 //LÓGICA DEL CHAT
 chatLogic(io);
 
