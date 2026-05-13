@@ -23,6 +23,14 @@ El proyecto está desarrollado con una **arquitectura cliente-servidor**, utiliz
 
 ---
 
+## 🎬 Demostración en Vídeo
+
+Haz clic en la imagen para ver el funcionamiento de la plataforma en YouTube:
+
+[![Ver Video Demostrativo - ViajaMás](https://img.youtube.com/vi/tngbXSjh5iU/0.jpg)](https://www.youtube.com/watch?v=tngbXSjh5iU)
+
+---
+
 ## 🚧 Próximas mejoras planificadas
 
 - Completar migración del frontend a React + React Router
