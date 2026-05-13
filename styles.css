@@ -1254,3 +1254,401 @@ button:hover {
         font-size: 2.1rem;
     }
 }
+
+/* Botón hamburguesa */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1002;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .footer-col {
+        width: 45%;
+    }
+
+    .sobre-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Móvil */
+@media (max-width: 768px) {
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: auto;
+        padding: 10px 18px;
+    }
+
+    .logo img {
+        width: 58px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    header nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #0a6aa6;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+    }
+
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 10px 0;
+        margin: 0;
+        gap: 0;
+    }
+
+    header nav ul.activo,
+    header nav ul.nav-menu.activo {
+        display: flex;
+    }
+
+    header nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav ul li a {
+        display: block;
+        width: 100%;
+        padding: 13px 0;
+        color: #ffffff;
+        font-size: 15px;
+    }
+
+    header nav ul li a:hover {
+        background: rgba(255, 255, 255, 0.14);
+    }
+
+    .hero {
+        height: 55vh;
+        min-height: 360px;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+        padding: 0 12px;
+    }
+
+    .hero p {
+        font-size: 15px;
+        padding: 0 16px;
+    }
+
+
+    .item img {
+        width: 78px;
+        height: 98px;
+        object-fit: cover;
+    }
+
+    .item p {
+        font-size: 11px;
+        line-height: 1.2;
+    }
+
+    .lista-destinos {
+        padding: 16px 12px;
+        gap: 16px;
+    }
+
+    .destino-card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .modal-content {
+        width: 92%;
+        padding: 16px;
+    }
+
+    #modal-img {
+        height: auto;
+        max-height: 50vh;
+    }
+
+    .form-container {
+        width: 92%;
+        margin: 24px auto;
+        padding: 20px;
+    }
+
+    .form-container input {
+        width: 100%;
+    }
+
+    .conversor {
+        padding: 40px 16px;
+    }
+
+    .conversor-container {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .sobre-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-col {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 14px;
+        text-align: center;
+    }
+
+    .experiencias-container {
+        padding: 24px 14px;
+    }
+
+    .experiencias-container .formulario-card {
+        padding: 20px;
+    }
+
+    .card-header,
+    .form-footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-publicar {
+        width: 100%;
+    }
+
+    .parallax {
+        background-attachment: scroll;
+        height: 340px;
+    }
+}
+
+/* Móvil pequeño */
+@media (max-width: 480px) {
+    .logo img {
+        width: 52px;
+    }
+
+    .hero h1 {
+        font-size: 22px;
+    }
+
+    .hero p {
+        font-size: 13px;
+    }
+
+    .recomendaciones {
+        padding: 24px 12px;
+    }
+
+    .recomendaciones h2 {
+        font-size: 22px;
+    }
+
+
+    .btn-sobre {
+        width: 100%;
+        text-align: center;
+    }
+}
+/* Recomendaciones móvil  */
+@media (max-width: 768px) {
+    .recomendaciones {
+        padding: 28px 0 32px;
+        background: #ffffff;
+        overflow: hidden;
+    }
+
+    .recomendaciones h2 {
+        font-size: 24px;
+        margin: 0 16px 22px;
+        text-align: center;
+        color: #2c3e50;
+    }
+
+    .carousel {
+        display: flex;
+        justify-content: flex-start;
+        gap: 18px;
+        overflow-x: auto;
+        padding: 0 18px 12px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .carousel::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    .carousel::-webkit-scrollbar-thumb {
+        background: rgba(10, 106, 166, 0.35);
+        border-radius: 999px;
+    }
+
+    .item {
+        min-width: 105px;
+        max-width: 105px;
+        flex: 0 0 auto;
+        text-align: center;
+        scroll-snap-align: start;
+    }
+
+    .item img {
+        width: 88px;
+        height: 88px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+    }
+
+    .item p {
+        margin-top: 8px;
+        font-size: 12px;
+        line-height: 1.2;
+        font-weight: 700;
+        color: #222;
+    }
+}
+/* Filtros móvil - chips limpios */
+@media (max-width: 768px) {
+    .busqueda {
+        padding: 34px 18px;
+        background: #e9f7f7;
+    }
+
+    .busqueda h2 {
+        font-size: 24px;
+        margin-bottom: 22px;
+        color: #2c3e50;
+    }
+
+    .filtros {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        max-width: 340px;
+        margin: 0 auto;
+    }
+
+    .filtros button {
+        margin: 0;
+        min-width: 110px;
+        padding: 12px 18px;
+        border-radius: 999px;
+        background: #0a6aa6;
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 14px;
+        box-shadow: 0 6px 14px rgba(10, 106, 166, 0.18);
+    }
+
+    .filtros button:hover {
+        background: #084f80;
+    }
+}
+
+@media (max-width: 480px) {
+    .filtros {
+        max-width: 280px;
+        gap: 10px;
+    }
+
+    .filtros button {
+        min-width: 120px;
+        font-size: 13px;
+        padding: 11px 14px;
+    }
+}
+/* Formularios y conversor responsive - alineación final */
+@media (max-width: 768px) {
+    .conversor {
+        padding: 55px 16px;
+    }
+
+    .conversor h1,
+    .conversor h2 {
+        font-size: 26px;
+        margin-bottom: 24px;
+        color: #2c3e50;
+    }
+
+    .conversor-container {
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+        padding: 24px 20px;
+        border-radius: 12px;
+        box-sizing: border-box;
+    }
+
+    .conversor-container label {
+        text-align: center;
+        display: block;
+        margin: 14px 0 8px;
+        color: #333;
+    }
+
+    .conversor-container input,
+    .conversor-container select {
+        width: 100%;
+        display: block;
+        margin: 0 auto 12px;
+        padding: 12px;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+
+    .conversor-container button,
+    #convertir {
+        width: 100%;
+        display: block;
+        margin-top: 16px;
+        padding: 13px;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+
+    .form-container {
+        width: calc(100% - 32px);
+        max-width: 390px;
+        margin: 45px auto;
+        padding: 24px 20px;
+        box-sizing: border-box;
+    }
+
+    .form-container input,
+    .form-container select,
+    .form-container button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .input-group input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
