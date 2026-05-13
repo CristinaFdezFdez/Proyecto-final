@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sobre mí | ViajaMás</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="shortcut icon" href="../imagenes/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="author" content="Cristina Fernández Fernández">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="../imagenes/logo.png" alt="Logo ViajaMás">
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="destinos.html">Destinos</a></li>
+                <li><a href="experiencias.html">Experiencias</a></li>
+                <li><a href="conversor.html">Conversor</a></li>
+                <li><a href="chat.html">Chat</a></li>
+
+                <li id="inicio"><a href="iniciar-sesion.html">Iniciar Sesión</a></li>
+                <li id="registro"><a href="registro.html">Registrarse</a></li>
+                <li id="salir" style="display:none;"><a href="#" id="salir">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="sobre-page">
+        <section class="sobre-hero">
+            <span class="sobre-etiqueta">Proyecto Final 2º DAW</span>
+
+            <h1>Hola, soy Cristina Fernández</h1>
+
+            <p>
+                Soy estudiante de Desarrollo de Aplicaciones Web y he creado <strong>ViajaMás</strong>
+                como proyecto final para demostrar la integración completa entre frontend, backend,
+                base de datos, autenticación y servicios externos.
+            </p>
+
+            <div class="sobre-botones">
+                <a href="https://portfoliocristina.netlify.app/" target="_blank" class="btn-sobre btn-principal">
+                    Ver portfolio
+                </a>
+
+                <a href="https://github.com/CristinaFdezFdez/Proyecto-final" target="_blank" class="btn-sobre btn-secundario">
+                    Ver GitHub
+                </a>
+
+                <a href="../index.html" class="btn-sobre btn-secundario">
+                    Volver a ViajaMás
+                </a>
+            </div>
+        </section>
+
+        <section class="sobre-grid">
+            <article class="sobre-card">
+                <h2>Qué es ViajaMás</h2>
+                <p>
+                    ViajaMás es una aplicación web full-stack pensada para descubrir destinos,
+                    compartir experiencias con fotos, consultar divisas y comunicarse mediante
+                    chat en tiempo real.
+                </p>
+            </article>
+
+            <article class="sobre-card">
+                <h2>Tecnologías usadas</h2>
+                <ul>
+                    <li>HTML5, CSS3 y JavaScript</li>
+                    <li>React + Vite</li>
+                    <li>Node.js + Express</li>
+                    <li>MongoDB</li>
+                    <li>JWT + bcrypt</li>
+                    <li>Socket.io y Cloudinary</li>
+                </ul>
+            </article>
+
+            <article class="sobre-card">
+                <h2>Qué he aprendido</h2>
+                <p>
+                    Durante el desarrollo he trabajado autenticación segura, subida de imágenes,
+                    consumo de APIs externas, comunicación en tiempo real, validaciones,
+                    organización MVC y documentación técnica del proyecto.
+                </p>
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-row">
+
+                <div class="footer-col">
+                    <h6>ViajaMás</h6>
+                    <p class="text-justify">
+                        ViajaMás es una plataforma creada para inspirar a viajeros, descubrir destinos increíbles
+                        y conectar experiencias de todo el mundo. Explora, aprende y comparte tu aventura.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h6>Secciones</h6>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="destinos.html">Destinos</a></li>
+                        <li><a href="experiencias.html">Experiencias</a></li>
+                        <li><a href="conversor.html">Conversor</a></li>
+                        <li><a href="sobre-mi.html">Sobre mí</a></li>
+                        <li><a href="chat.html">Chat</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h6>Enlaces útiles</h6>
+                    <ul class="footer-links">
+                        <li><a href="sobre-mi.html">Sobre el proyecto</a></li>
+                        <li><a href="https://portfoliocristina.netlify.app/" target="_blank">Portfolio</a></li>
+                        <li><a href="https://github.com/CristinaFdezFdez/Proyecto-final" target="_blank">Repositorio GitHub</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="footer-bottom">
+                <p class="copyright-text">
+                    &copy; 2025 ViajaMás — Todos los derechos reservados.
+                </p>
+
+                <ul class="social-icons">
+                    <li><a class="github" href="https://github.com/CristinaFdezFdez" target="_blank"><i class="fa fa-github"></i></a></li>
+                    <li><a class="linkedin" href="https://portfoliocristina.netlify.app/" target="_blank"><i class="fa fa-briefcase"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/autentica.js"></script>
+</body>
+</html>
