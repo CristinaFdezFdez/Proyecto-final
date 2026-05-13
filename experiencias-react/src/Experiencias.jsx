@@ -1,14 +1,28 @@
 import { useEffect, useState } from "react";
 
+// Categorías disponibles con su emoji y color de badge
+const CATEGORIAS = [
+    { value: "ciudad",      label: "🏙️ Ciudad",      color: "#0a6aa6" },
+    { value: "naturaleza",  label: "🌿 Naturaleza",   color: "#7D8C57" },
+    { value: "playa",       label: "🏖️ Playa",        color: "#00b4d8" },
+    { value: "cultura",     label: "🏛️ Cultura",      color: "#9b5de5" },
+    { value: "gastronomia", label: "🍷 Gastronomía",  color: "#e63946" },
+];
+
+// Devuelve el objeto de categoría o un fallback si no existe
+const getCategoria = (value) =>
+    CATEGORIAS.find(c => c.value === value) || { label: "🌍 Viaje", color: "#888" };
+
 export default function Experiencias() {
     const [comentarios, setComentarios] = useState([]);
     const [cargando, setCargando] = useState(true);
-    const [enviando, setEnviando] = useState(false); // Evita doble envío al pulsar Publicar
+    const [enviando, setEnviando] = useState(false);
     
     const [nuevoComentario, setNuevoComentario] = useState({
         destino: "", 
         comentario: "",
-        estrellas: 5
+        estrellas: 5,
+        categoria: "ciudad", 
     });
 
     const [archivo, setArchivo] = useState(null);
@@ -18,15 +32,12 @@ export default function Experiencias() {
         const token = localStorage.getItem("token");
         if (token) {
             try {
-                // El JWT tiene 3 partes separadas por '.', el payload es la segunda en base64
                 const payload = JSON.parse(atob(token.split('.')[1]));
                 if (payload.nombre && typeof payload.nombre === 'string') return payload.nombre;
             } catch {
                 // Token malformado, intentamos el fallback
             }
         }
-
-        // Fallback: objeto usuario guardado en localStorage al hacer login
         const usuarioLocal = localStorage.getItem("usuario");
         if (usuarioLocal) {
             try {
@@ -36,7 +47,6 @@ export default function Experiencias() {
                 return usuarioLocal;
             }
         }
-        
         return "Desconocido";
     };
 
@@ -63,7 +73,7 @@ export default function Experiencias() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (enviando) return; // Bloquea si ya hay un envío en curso
+        if (enviando) return;
         setEnviando(true);
         
         const token = localStorage.getItem("token");
@@ -78,6 +88,7 @@ export default function Experiencias() {
         formData.append("destino", nuevoComentario.destino);
         formData.append("comentario", nuevoComentario.comentario);
         formData.append("estrellas", nuevoComentario.estrellas);
+        formData.append("categoria", nuevoComentario.categoria); 
         if (archivo) formData.append("imagen", archivo);
 
         // El token va en la cabecera Authorization — el servidor lo verifica y extrae el nombre
@@ -88,16 +99,16 @@ export default function Experiencias() {
         })
         .then(res => {
             if (res.ok) {
-                setNuevoComentario({ destino: "", comentario: "", estrellas: 5 });
+                setNuevoComentario({ destino: "", comentario: "", estrellas: 5, categoria: "ciudad" });
                 setArchivo(null);
                 document.getElementById("input-foto").value = "";
-                cargarComentarios(); // Recarga el muro para mostrar el nuevo comentario
+                cargarComentarios();
             } else {
                 res.json().then(err => alert(err.error));
             }
         })
         .catch(err => console.error(err))
-        .finally(() => setEnviando(false)); // Siempre desbloquea, haya error o no
+        .finally(() => setEnviando(false));
     };
 
     return (
@@ -131,6 +142,19 @@ export default function Experiencias() {
                         className="textarea-style"
                     ></textarea>
 
+                    {/* Selector de categoría */}
+                    <select
+                        name="categoria"
+                        value={nuevoComentario.categoria}
+                        onChange={handleChange}
+                        className="select-style"
+                        style={{ width: "100%", marginBottom: "10px" }}
+                    >
+                        {CATEGORIAS.map(cat => (
+                            <option key={cat.value} value={cat.value}>{cat.label}</option>
+                        ))}
+                    </select>
+
                     <div style={{ marginTop: "10px", marginBottom: "15px", textAlign: "left" }}>
                         <label style={{ display: "block", marginBottom: "5px", fontWeight: "bold", fontSize: "0.9rem" }}>
                             📸 Sube una foto de tu viaje:
@@ -150,7 +174,7 @@ export default function Experiencias() {
                             value={nuevoComentario.estrellas} 
                             onChange={handleChange} 
                             className="select-style" 
-                            style={{width: "auto", marginBottom: 0}}
+                            style={{ width: "auto", marginBottom: 0 }}
                         >
                             <option value="5">⭐⭐⭐⭐⭐ Excelente</option>
                             <option value="4">⭐⭐⭐⭐ Muy bueno</option>
@@ -173,39 +197,58 @@ export default function Experiencias() {
             
             <div className="grid-experiencias">
                 {/* key con índice es aceptable aquí porque los comentarios no se reordenan */}
-                {comentarios.map((c, i) => (
-                    <div key={i} className="card-experiencia">
-                        <div className="card-header">
-                            <div className="usuario-info">
-                                <img 
-                                    src={`https://ui-avatars.com/api/?name=${c.nombre || "User"}&background=0a6aa6&color=fff&size=60&bold=true`} 
-                                    alt="Avatar" 
-                                    className="avatar" 
-                                />
-                                <div>
-                                    <strong className="nombre-usuario">{c.nombre || "Anónimo"}</strong>
-                                    <small className="fecha-publicacion">{c.fecha_comentario}</small>
-                                </div>
-                            </div>
-                            <div className="valoracion">{"⭐".repeat(c.estrellas || 5)}</div>
-                        </div>
-                        <div className="card-body" style={{ textAlign: "left" }}>
-                            <h4>📍 {c.destino}</h4> 
-                            <p className="comentario-texto">"{c.comentario}"</p>
-                            
-                            {/* La imagen es opcional — solo se renderiza si existe la URL de Cloudinary */}
-                            {c.imagen && (
-                                <div style={{ marginTop: "15px", textAlign: "center", backgroundColor: "#f3f4f6", borderRadius: "8px", padding: "10px" }}>
+                {comentarios.map((c, i) => {
+                    const cat = getCategoria(c.categoria);
+                    return (
+                        <div key={i} className="card-experiencia">
+                            <div className="card-header">
+                                <div className="usuario-info">
                                     <img 
-                                        src={c.imagen} 
-                                        alt={`Viaje a ${c.destino}`} 
-                                        style={{ maxWidth: "100%", borderRadius: "4px", maxHeight: "400px", objectFit: "contain" }}
+                                        src={`https://ui-avatars.com/api/?name=${c.nombre || "User"}&background=0a6aa6&color=fff&size=60&bold=true`} 
+                                        alt="Avatar" 
+                                        className="avatar" 
                                     />
+                                    <div>
+                                        <strong className="nombre-usuario">{c.nombre || "Anónimo"}</strong>
+                                        <small className="fecha-publicacion">{c.fecha_comentario}</small>
+                                    </div>
                                 </div>
-                            )}
+                                <div className="valoracion">{"⭐".repeat(c.estrellas || 5)}</div>
+                            </div>
+                            <div className="card-body" style={{ textAlign: "left" }}>
+                                <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
+                                    <h4 style={{ margin: 0 }}>📍 {c.destino}</h4>
+                                    {/* Badge de categoría — solo se muestra si el comentario tiene categoría */}
+                                    {c.categoria && (
+                                        <span style={{
+                                            backgroundColor: cat.color,
+                                            color: "#fff",
+                                            fontSize: "0.75rem",
+                                            fontWeight: "600",
+                                            padding: "2px 10px",
+                                            borderRadius: "20px",
+                                            whiteSpace: "nowrap"
+                                        }}>
+                                            {cat.label}
+                                        </span>
+                                    )}
+                                </div>
+                                <p className="comentario-texto">"{c.comentario}"</p>
+                                
+                                {/* La imagen es opcional — solo se renderiza si existe la URL de Cloudinary */}
+                                {c.imagen && (
+                                    <div style={{ marginTop: "15px", textAlign: "center", backgroundColor: "#f3f4f6", borderRadius: "8px", padding: "10px" }}>
+                                        <img 
+                                            src={c.imagen} 
+                                            alt={`Viaje a ${c.destino}`} 
+                                            style={{ maxWidth: "100%", borderRadius: "4px", maxHeight: "400px", objectFit: "contain" }}
+                                        />
+                                    </div>
+                                )}
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    );
+                })}
             </div>
         </div>
     );

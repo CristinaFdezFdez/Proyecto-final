@@ -423,6 +423,8 @@ a {
     border-radius: 5px;
     font-size: 1rem;
     box-sizing: border-box;
+    min-height: 150px; 
+    resize: vertical;  /* permite al usuario redimensionarlo si quiere */
 }
 
 #comentarioForm textarea {
