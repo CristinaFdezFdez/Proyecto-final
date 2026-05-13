@@ -40,11 +40,23 @@ async function crearComentario(req, res) {
         const token = authHeader.split(" ")[1];
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-        const { destino, comentario, estrellas } = req.body;
+        const { destino, comentario, estrellas, categoria } = req.body;
 
         if (!destino || !comentario || !estrellas) {
             return res.status(400).json({ error: "Faltan campos requeridos." });
         }
+
+        const estrellasNum = parseInt(estrellas);
+
+        if (isNaN(estrellasNum) || estrellasNum < 1 || estrellasNum > 5) {
+            return res.status(400).json({ error: "La valoración debe estar entre 1 y 5 estrellas." });
+        }
+
+        const categoriasValidas = ["ciudad", "naturaleza", "playa", "cultura", "gastronomia"];
+
+        const categoriaFinal = categoriasValidas.includes(categoria)
+            ? categoria
+            : "ciudad";
 
         const imagenUrl = req.file ? req.file.path : null;
 
@@ -54,8 +66,9 @@ async function crearComentario(req, res) {
             nombre: decoded.nombre,
             destino,
             comentario,
-            estrellas: parseInt(estrellas),
-            imagen: imagenUrl, 
+            estrellas: estrellasNum,
+            categoria: categoriaFinal,
+            imagen: imagenUrl,
             fecha_comentario: new Date()
         };
 
