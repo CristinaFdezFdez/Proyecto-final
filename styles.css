@@ -1652,3 +1652,117 @@ button:hover {
         box-sizing: border-box;
     }
 }
+/* Filtros de experiencias React */
+.filtros-experiencias {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    margin: 0 auto 32px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    border: 1px solid #e8eef5;
+}
+
+.filtros-experiencias h3 {
+    color: #0a6aa6;
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: 1.4rem;
+}
+
+.input-busqueda-experiencias {
+    width: 100%;
+    max-width: 420px;
+    padding: 12px 16px;
+    border: 2px solid #dce7f2;
+    border-radius: 999px;
+    font-size: 1rem;
+    margin-bottom: 18px;
+    box-sizing: border-box;
+}
+
+.input-busqueda-experiencias:focus {
+    outline: none;
+    border-color: #0a6aa6;
+    box-shadow: 0 0 0 4px rgba(10, 106, 166, 0.10);
+}
+
+.chips-categorias {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.chip-categoria {
+    border: 2px solid #dce7f2;
+    background: #ffffff;
+    color: #0a6aa6;
+    padding: 9px 15px;
+    border-radius: 999px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.chip-categoria:hover,
+.chip-categoria.activo {
+    background: #0a6aa6;
+    color: #ffffff;
+    border-color: #0a6aa6;
+    transform: translateY(-1px);
+}
+
+.contador-experiencias {
+    color: #555;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+}
+
+.btn-limpiar-filtros {
+    background: #f3f4f6;
+    color: #333;
+    border: none;
+    border-radius: 999px;
+    padding: 9px 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-limpiar-filtros:hover {
+    background: #e2e8f0;
+}
+
+.estado-vacio-experiencias {
+    background: #ffffff;
+    border: 2px dashed #dce7f2;
+    border-radius: 16px;
+    padding: 32px 20px;
+    text-align: center;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.estado-vacio-experiencias h3 {
+    color: #0a6aa6;
+    margin-top: 0;
+}
+
+@media (max-width: 768px) {
+    .filtros-experiencias {
+        padding: 20px 14px;
+    }
+
+    .chips-categorias {
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 8px;
+    }
+
+    .chip-categoria {
+        flex: 0 0 auto;
+        font-size: 0.9rem;
+    }
+}
