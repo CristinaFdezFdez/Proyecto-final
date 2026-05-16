@@ -3,12 +3,17 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #e8f0ff;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-}
+    background: radial-gradient(circle at top, #e8f0ff 0, #d5e2ff 40%, #c0d2ff 100%);
 
+}
+h1, h2, h3, .titulo-seccion {
+    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
 /* Contenedor principal */
 main {
     flex: 1;
@@ -817,53 +822,100 @@ input:focus {
 /* Conversor */
 .conversor {
     text-align: center;
-    padding: 90px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    color: white;
+    padding: 90px 16px;
+    background: radial-gradient(circle at top, #e8f0ff 0, #d5e2ff 40%, #c0d2ff 100%);
+    color: #2c3e50;
+}
+
+.conversor h1,
+.conversor h2 {
+    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #0a6aa6;
+}
+
+.conversor p {
+    font-size: 16px;
+    color: #555;
+    max-width: 520px;
+    margin: 0 auto 26px;
 }
 
 .conversor-container {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    width: 350px;
-    margin: 20px auto;
+    background: #ffffff;
+    padding: 24px 22px;
+    border-radius: 16px;
+    box-shadow: 0 14px 32px rgba(15, 40, 90, 0.18);
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border: 1px solid #e4ecf7;
 }
 
-/* Inputs y selects */
-label {
-    font-size: 16px;
-    font-weight: bold;
+.conversor-container label {
+    font-size: 14px;
+    font-weight: 600;
     display: block;
-    margin-top: 10px;
-    color: #333;
+    margin: 12px 0 6px;
+    color: #2c3e50;
+    text-align: left;
 }
 
-input,
-select {
-    width: 90%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+.conversor-container input,
+.conversor-container select {
+    width: 100%;
+    padding: 10px 12px;
+    margin: 0 0 10px;
+    border: 1px solid #d0d9ea;
+    border-radius: 10px;
+    font-size: 15px;
+    box-sizing: border-box;
+    background: #f7f9fd;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
-/* Botón */
+.conversor-container input:focus,
+.conversor-container select:focus {
+    border-color: #0a6aa6;
+    background: #ffffff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(10, 106, 166, 0.15);
+}
+
 #convertir {
     width: 100%;
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
+    background: linear-gradient(135deg, #0a6aa6, #0f87d1);
+    color: #ffffff;
+    padding: 11px 16px;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 600;
     cursor: pointer;
-    margin-top: 15px;
-    transition: 0.3s;
+    margin-top: 16px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.2s ease;
+    box-shadow: 0 12px 26px rgba(10, 106, 166, 0.30);
+}
+
+#convertir:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 16px 34px rgba(10, 106, 166, 0.36);
+}
+
+#convertir:active {
+    transform: translateY(0);
+    box-shadow: 0 8px 20px rgba(10, 106, 166, 0.28);
+}
+
+#resultado {
+    margin-top: 18px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0a6aa6;
 }
 
 button:hover {
