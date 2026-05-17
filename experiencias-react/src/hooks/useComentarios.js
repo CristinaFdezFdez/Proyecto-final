@@ -6,8 +6,11 @@ export function useComentarios() {
 
     const cargarComentarios = () => {
         setCargando(true);
+        const token = localStorage.getItem("token");
 
-        fetch("/comentarios")
+        fetch("/comentarios", {
+            headers: token ? { Authorization: `Bearer ${token}` } : {}
+        })
             .then(res => res.json())
             .then(data => {
                 if (Array.isArray(data)) {
@@ -19,11 +22,11 @@ export function useComentarios() {
     };
 
     useEffect(() => {
-    const cargarInicial = async () => {
-        await cargarComentarios();
-    };
+        const cargarInicial = async () => {
+            await cargarComentarios();
+        };
 
-    cargarInicial();
-}, []);
+        cargarInicial();
+    }, []);
     return { comentarios, cargando, cargarComentarios };
 }
